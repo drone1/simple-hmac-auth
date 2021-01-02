@@ -246,7 +246,7 @@ class Client {
       }
 
       headers.authorization = `api-key ${apiKey}`;
-      headers.date = new Date().toUTCString();
+      headers.timestamp = new Date().toUTCString();
 
       // Sort query keys alphabetically
       const keys = Object.keys(query).sort();
