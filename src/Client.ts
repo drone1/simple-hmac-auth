@@ -388,7 +388,10 @@ class Client {
           let object;
 
           try {
-            object = JSON.parse(responseData);
+            const responseContentType = response.headers['content-type']
+            if (responseContentType && responseContentType == 'application/json') {
+              object = JSON.parse(responseData);
+            }
           } catch (e) {
             // This may or may not be OK, depending on the API call
           }
