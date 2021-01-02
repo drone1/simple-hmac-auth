@@ -9,7 +9,7 @@ import crypto from 'crypto';
 // Only sign these headers
 export const headerWhitelist = [
   'authorization',
-  'date',
+  'timestamp',
   'content-length',
   'content-type'
 ];
