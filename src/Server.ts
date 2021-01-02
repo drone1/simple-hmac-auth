@@ -194,7 +194,7 @@ class SimpleHMACAuth {
       throw new AuthError(`Authorization header send invalid algorithm: "${algorithm}". The only supported hmac algorithms are: "${algorithms.join('", "')}"`, `HMAC_ALGORITHM_INVALID`);
     }
 
-    const requestURL = url.parse(request.url!);
+    const requestURL = url.parse(request.originalUrl!);
 
     const headers: {[key: string] : string} = {};
 
@@ -252,7 +252,7 @@ class SimpleHMACAuth {
 
       } else {
 
-        query = querystring.parse(url.parse(request.url!).query!) as {[apiKey: string]: string};
+        query = querystring.parse(url.parse(request.originalUrl!).query!) as {[apiKey: string]: string};
       }
 
       if (query !== undefined && query.apiKey !== undefined) {
