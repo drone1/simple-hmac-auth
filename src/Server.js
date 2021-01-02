@@ -124,7 +124,7 @@ class SimpleHMACAuth {
 
     if (request.headers.timestamp === undefined) {
 
-      throw new AuthError(`Missing timestamp. Please timestamp all incoming requests by including 'date' header.`, `DATE_HEADER_MISSING`);
+      throw new AuthError(`Missing timestamp. Please timestamp all incoming requests by including 'timestamp' header.`, `DATE_HEADER_MISSING`);
     }
 
     // First, confirm that the 'date' header is recent enough
