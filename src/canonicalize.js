@@ -11,7 +11,7 @@ const crypto = require('crypto');
 // Only sign these headers
 const headerWhitelist = [
   'authorization',
-  'date',
+  'timestamp',
   'content-length',
   'content-type'
 ];
